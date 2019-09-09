@@ -5,8 +5,8 @@ class Message:
     def __init__(self,text: str):
         self.text = text
 
-    def send(self,hook_url):
+    def send(self, hook):
         json = {
-            'text':self.text
+            'text': self.text
         }
-        requests.post(url=hook_url,json=json)
+        requests.post(url=str(hook), json=json)
